@@ -6,7 +6,7 @@ const API = {
 };
 
 export default {
-  title: "@uptownhr / BannerHighlight"
+  title: "Hero"
 };
 
 export const Default = () => ({

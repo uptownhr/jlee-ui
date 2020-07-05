@@ -6,32 +6,24 @@ name: Node.js Package
 on:
   push:
     branches: [ master ]
-  release:
-    types: [created]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name:  'Automated Version Bump'
+        uses:  'phips28/gh-action-bump-version@master'
         with:
-          node-version: 12
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+          tag-prefix:  ''      
       - uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           always-auth: true
           scope: '@uptownhr'
-      - run: ls dist
-      - run: npm publish
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

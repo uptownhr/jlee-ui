@@ -1,5 +1,8 @@
 <script>
+import Logo from './logo'
+
 export default {
+  components: { Logo },
   props: {
     loggedIn: {
       default: false
@@ -49,7 +52,7 @@ export default {
             >
               <div class="flex items-center justify-between w-full md:w-auto">
                 <a href="#" aria-label="Home">
-                  <img class="h-8 w-auto sm:h-10" src="./logo.svg" alt="Logo" />
+                  <Logo class="h8 w-auto sm:h-10" />
                 </a>
                 <div
                   @click="mobileNav = ''"

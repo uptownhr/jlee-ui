@@ -11,6 +11,7 @@
     "storybook:build": "build-storybook --quiet"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^1.7.0",
     "core-js": "^3.6.5",
     "postcss-each": "^0.10.0",
     "tailwindcss": "^1.4.6",

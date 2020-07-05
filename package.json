@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "private": false,
   "main": "./dist/jlee-ui.common.js",
+  "files" : ["dist"],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name jlee-ui src/main.js",

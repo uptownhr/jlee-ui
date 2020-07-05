@@ -49,11 +49,7 @@ export default {
             >
               <div class="flex items-center justify-between w-full md:w-auto">
                 <a href="#" aria-label="Home">
-                  <img
-                    class="h-8 w-auto sm:h-10"
-                    src="./logo.svg"
-                    alt="Logo"
-                  />
+                  <img class="h-8 w-auto sm:h-10" src="./logo.svg" alt="Logo" />
                 </a>
                 <div
                   @click="mobileNav = ''"
@@ -104,14 +100,12 @@ export default {
                 class="ml-8 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
                 >FAQ
               </a> -->
-              <no-ssr>
-                <nuxt-link
-                  v-if="loggedIn"
-                  to="/member"
-                  class="ml-8 font-medium text-indigo-600 hover:text-indigo-900 transition duration-150 ease-in-out"
-                  >Members
-                </nuxt-link>
-              </no-ssr>
+              <nuxt-link
+                v-if="loggedIn"
+                to="/member"
+                class="ml-8 font-medium text-indigo-600 hover:text-indigo-900 transition duration-150 ease-in-out"
+                >Members
+              </nuxt-link>
             </div>
           </nav>
         </div>
@@ -181,14 +175,12 @@ export default {
                   role="menuitem"
                   >Services
                 </a>
-                <no-ssr>
-                  <nuxt-link
-                    v-if="loggedIn"
-                    to="/member"
-                    class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
-                    >Members
-                  </nuxt-link>
-                </no-ssr>
+                <nuxt-link
+                  v-if="loggedIn"
+                  to="/member"
+                  class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                  >Members
+                </nuxt-link>
               </div>
               <div v-if="!loggedIn">
                 <a
@@ -221,38 +213,36 @@ export default {
               for 4 years and have not looked back. Let me guide and fast track
               you to using Vue today.
             </p>
-            <no-ssr>
-              <div
-                class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
+            <div
+              class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
+            >
+              <form
+                @submit.prevent="handleAuth(loginForm)"
+                class="w-full max-w-sm"
               >
-                <form
-                  @submit.prevent="handleAuth(loginForm)"
-                  class="w-full max-w-sm"
+                <div
+                  v-if="!loggedIn"
+                  class="flex items-center border-b border-b-2 border-indigo-500 py-2"
                 >
-                  <div
-                    v-if="!loggedIn"
-                    class="flex items-center border-b border-b-2 border-indigo-500 py-2"
-                  >
-                    <input
-                      v-model="loginForm.email"
-                      class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                      type="text"
-                      placeholder="Email"
-                      aria-label="Email"
-                    />
-                  </div>
+                  <input
+                    v-model="loginForm.email"
+                    class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                    type="text"
+                    placeholder="Email"
+                    aria-label="Email"
+                  />
+                </div>
 
-                  <div class="rounded-md shadow mt-2">
-                    <button
-                      href="#"
-                      class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
-                    >
-                      Get started
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </no-ssr>
+                <div class="rounded-md shadow mt-2">
+                  <button
+                    href="#"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+                  >
+                    Get started
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </main>
       </div>

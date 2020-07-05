@@ -9,7 +9,7 @@ export default {
     },
     plans: {
       type: Array,
-      default: []
+      default: () => []
     },
     loggedIn: {
       type: Boolean,
@@ -23,7 +23,7 @@ export default {
       return this.plans.sort((a, b) => {
         return b.amount - a.amount;
       })[0];
-    },
+    }
   },
 
   methods: {
@@ -219,25 +219,23 @@ export default {
                     </li>
                   </ul>
 
-                  <client-only>
-                    <div class="mt-10">
-                      <div class="rounded-lg shadow-md">
-                        <a
-                          @click="checkoutRedirect(plan.id)"
-                          data-gumroad-single-product="true"
-                          class="cursor-pointer block w-full text-center rounded-lg px-6 py-4 text-xl leading-6 font-semibold font-display text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline transition ease-in-out duration-150"
-                          :class="{
-                            'bg-green-400': subscribed,
-                            'bg-indigo-800': !subscribed,
-                            'opacity-50 cursor-not-allowed':
-                              subscribed || !loggedIn
-                          }"
-                        >
-                          {{ subscribed ? "Subscribed" : "Buy Early Access" }}
-                        </a>
-                      </div>
+                  <div class="mt-10">
+                    <div class="rounded-lg shadow-md">
+                      <a
+                        @click="checkoutRedirect(plan.id)"
+                        data-gumroad-single-product="true"
+                        class="cursor-pointer block w-full text-center rounded-lg px-6 py-4 text-xl leading-6 font-semibold font-display text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline transition ease-in-out duration-150"
+                        :class="{
+                          'bg-green-400': subscribed,
+                          'bg-indigo-800': !subscribed,
+                          'opacity-50 cursor-not-allowed':
+                            subscribed || !loggedIn
+                        }"
+                      >
+                        {{ subscribed ? "Subscribed" : "Buy Early Access" }}
+                      </a>
                     </div>
-                  </client-only>
+                  </div>
                 </div>
               </div>
             </div>

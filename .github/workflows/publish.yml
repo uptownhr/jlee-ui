@@ -4,6 +4,7 @@
 name: Node.js Package
 
 on:
+  push: [master]
   release:
     types: [created]
 
@@ -29,6 +30,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           always-auth: true
           scope: '@uptownhr'
-      - run: yarn publish
+      - run: ls dist
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

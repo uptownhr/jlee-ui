@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name jlee-ui src/main.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@stripe/stripe-js": "^1.7.0",
     "core-js": "^3.6.5",
+    "lodash": "^4.17.15",
     "postcss-each": "^0.10.0",
     "tailwindcss": "^1.4.6",
     "vue": "^2.6.11"

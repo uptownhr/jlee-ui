@@ -1,10 +1,4 @@
-import Vue from "vue";
-import App from "./App.vue";
-import "./assets/tailwind.css";
-import "./assets/tailwind.css";
-
-Vue.config.productionTip = false;
-
-new Vue({
-  render: h => h(App)
-}).$mount("#app");
+export { default as Hero } from "./components/Hero/Hero.vue";
+export { default as MyStack } from "./components/MyStack/MyStack.vue";
+export { default as Pricing } from "./components/Pricing/Pricing.vue";
+export { default as Services } from "./components/Services/Services.vue";

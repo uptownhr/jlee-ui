@@ -1,5 +1,6 @@
 <script>
 import { loadStripe } from "@stripe/stripe-js/pure";
+import { sortBy } from "lodash/sortBy";
 
 export default {
   props: {
@@ -20,9 +21,8 @@ export default {
   computed: {
     plan() {
       //todo: currently selecting just largest plan
-      return this.plans.sort((a, b) => {
-        return b.amount - a.amount;
-      })[0];
+      const sorted = sortBy(this.plans, ["amount"]);
+      return sorted[0];
     }
   },
 
@@ -42,9 +42,7 @@ export default {
           successUrl: process.env.URL,
           cancelUrl: process.env.URL
         })
-        .then(result => {
-          console.log("result", result);
-        });
+       
     },
 
     intervalConversion(interval) {

@@ -1,5 +1,5 @@
 {
-  "name": "jlee-ui",
+  "name": "@uptownhr/jlee-ui",
   "version": "0.1.0",
   "private": false,
   "main": "./dist/jlee-ui.common.js",

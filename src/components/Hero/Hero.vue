@@ -22,7 +22,7 @@ export default {
     async handleAuth({ email }) {
       if (this.loggedIn) return this.$emit('redirect')
       
-      this.$emit('auth')
+      this.$emit('auth', email)
     }
   }
 };

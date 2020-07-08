@@ -1,5 +1,5 @@
 <script>
-import Logo from './logo'
+import Logo from "./logo";
 
 export default {
   components: { Logo },
@@ -20,9 +20,9 @@ export default {
 
   methods: {
     async handleAuth({ email }) {
-      if (this.loggedIn) return this.$emit('redirect')
-      
-      this.$emit('auth', email)
+      if (this.loggedIn) return this.$emit("redirect");
+
+      this.$emit("auth", email);
     }
   }
 };
@@ -103,12 +103,14 @@ export default {
                 class="ml-8 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
                 >FAQ
               </a> -->
-              <nuxt-link
-                v-if="loggedIn"
-                to="/member"
-                class="ml-8 font-medium text-indigo-600 hover:text-indigo-900 transition duration-150 ease-in-out"
-                >Members
-              </nuxt-link>
+              <client-only>
+                <nuxt-link
+                  v-if="loggedIn"
+                  to="/member"
+                  class="ml-8 font-medium text-indigo-600 hover:text-indigo-900 transition duration-150 ease-in-out"
+                  >Members
+                </nuxt-link>
+              </client-only>
             </div>
           </nav>
         </div>
@@ -178,22 +180,26 @@ export default {
                   role="menuitem"
                   >Services
                 </a>
-                <nuxt-link
-                  v-if="loggedIn"
-                  to="/member"
-                  class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
-                  >Members
-                </nuxt-link>
+                <client-only>
+                  <nuxt-link
+                    v-if="loggedIn"
+                    to="/member"
+                    class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                    >Members
+                  </nuxt-link>
+                </client-only>
               </div>
-              <div v-if="!loggedIn">
-                <a
-                  href="#"
-                  class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 hover:text-indigo-700 focus:outline-none focus:bg-gray-100 focus:text-indigo-700 transition duration-150 ease-in-out"
-                  role="menuitem"
-                >
-                  Log in
-                </a>
-              </div>
+              <client-only>
+                <div v-if="!loggedIn">
+                  <a
+                    href="#"
+                    class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 hover:text-indigo-700 focus:outline-none focus:bg-gray-100 focus:text-indigo-700 transition duration-150 ease-in-out"
+                    role="menuitem"
+                  >
+                    Log in
+                  </a>
+                </div>
+              </client-only>
             </div>
           </div>
         </div>
@@ -223,18 +229,20 @@ export default {
                 @submit.prevent="handleAuth(loginForm)"
                 class="w-full max-w-sm"
               >
-                <div
-                  v-if="!loggedIn"
-                  class="flex items-center border-b border-b-2 border-indigo-500 py-2"
-                >
-                  <input
-                    v-model="loginForm.email"
-                    class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                    type="text"
-                    placeholder="Email"
-                    aria-label="Email"
-                  />
-                </div>
+                <client-only>
+                  <div
+                    v-if="!loggedIn"
+                    class="flex items-center border-b border-b-2 border-indigo-500 py-2"
+                  >
+                    <input
+                      v-model="loginForm.email"
+                      class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                      type="text"
+                      placeholder="Email"
+                      aria-label="Email"
+                    />
+                  </div>
+                </client-only>
 
                 <div class="rounded-md shadow mt-2">
                   <button

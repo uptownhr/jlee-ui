@@ -20,7 +20,8 @@
     "lodash": "^4.17.15",
     "postcss-each": "^0.10.0",
     "tailwindcss": "^1.4.6",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-client-only": "^2.0.0"
   },
   "devDependencies": {
     "@storybook/vue": "^5.3.19",

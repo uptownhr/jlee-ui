@@ -20,9 +20,9 @@ export default {
 
   methods: {
     async handleAuth({ email }) {
-      if (this.loggedIn) return this.$router.push("/member");
-      await this.$store.dispatch("user/auth", { email });
-      this.$router.push("/member");
+      if (this.loggedIn) return this.$emit('redirect')
+      
+      this.$emit('auth')
     }
   }
 };

@@ -1,8 +1,9 @@
 <script>
 import Logo from "./logo";
+import clientOnly from 'vue-client-only';
 
 export default {
-  components: { Logo },
+  components: { Logo, clientOnly },
   props: {
     loggedIn: {
       default: false

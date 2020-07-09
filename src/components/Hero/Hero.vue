@@ -219,7 +219,7 @@ export default {
             <p
               class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
             >
-              I’m a software engineer that love using VueJS. I’ve been using Vue
+              I’m a software engineer that loves using VueJS. I’ve been using Vue
               for 4 years and have not looked back. Let me guide and fast track
               you to using Vue today.
             </p>

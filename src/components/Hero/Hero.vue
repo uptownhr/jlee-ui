@@ -1,6 +1,6 @@
 <script>
 import Logo from "./logo";
-import clientOnly from 'vue-client-only';
+import clientOnly from "vue-client-only";
 
 export default {
   components: { Logo, clientOnly },
@@ -93,6 +93,12 @@ export default {
                 href="#services"
                 class="ml-8 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
                 >Services
+              </a>
+              <a
+                href="https://ui.jlee.biz"
+                class="ml-8 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
+                target="_blank"
+                >UI Kit
               </a>
               <!-- <a
                 href="#"
@@ -219,9 +225,9 @@ export default {
             <p
               class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
             >
-              I’m a software engineer that loves using VueJS. I’ve been using Vue
-              for 4 years and have not looked back. Let me guide and fast track
-              you to using Vue today.
+              I’m a software engineer that loves using VueJS. I’ve been using
+              Vue for 4 years and have not looked back. Let me guide and fast
+              track you to using Vue today.
             </p>
             <div
               class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"

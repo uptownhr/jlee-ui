@@ -1,4 +1,4 @@
-import MyStack from './MyStack'
+import MyStack from './LatestWork'
 import '../../assets/tailwind.css'
 
 export default {
